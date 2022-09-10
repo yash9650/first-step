@@ -1,25 +1,25 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import AuthContext from './context/auth-context';
 import Home from './Components/Home';
-import { useEffect } from 'react';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import About from './Components/About';
+
 
 function App() {
-  useEffect(()=>{
-    fetch('/home',{
-      method: 'GET',
-      headers: {
-        'Content-type': 'application/json'
-      }
-    }).then(res => res.json()).then((result) => {
-      console.log(result);
-    }).catch(err => {
-      console.log(err);
-    })
-  },[]);
-
   return (
-    <>
-    <Home/>
-    </>
+      <Router>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
   );
 }
 
