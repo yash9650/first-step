@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 export default function Header() {
   return (
-    <div className='p-2 sticky-top' style={{backgroundColor:'white'}}>
+    <div className='p-2 sticky-top' style={{backgroundColor:'white', boxShadow:' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand as={Link} to="/">First-Step</Navbar.Brand>

@@ -1,0 +1,25 @@
+.footer{
+    width: 100%;
+    bottom:0;
+  }
+  .footer-top{
+    /* background-color:#52527a; */
+    /* color:white; */
+    border: 1px solid black;
+  }
+  .footer-bottom{
+    height:'10vh';
+    text-align: center;
+    /* font-weight: bold; */
+    /* background-color:#240041; */
+    /* color:white; */
+  }
+  .company-name{
+    color:#6600cc;
+    font-size: xx-large;
+    font-style: italic;
+  }
+  .footer-links-headings{
+    font-weight: bold;
+  
+  }
