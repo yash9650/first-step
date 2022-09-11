@@ -3,12 +3,6 @@ import classes from '../css/footer.module.css';
 
 export default function Footer() {
   return (
-<<<<<<< HEAD:src/Components/Footer.jsx
-    <div className='footer px-5'>
-        <hr />
-        <p className='m-auto py-5'>First Step 2022 &copy; All Rights Reserved </p>
-        
-=======
     <div className={`${classes.footer} px-5`}>
         <div className={`container ${classes['footer-top']} p-5 col-12`}>
             <div className="row footer-text">
@@ -33,7 +27,6 @@ export default function Footer() {
         <div className={classes["footer-bottom"]}><hr />
             <p className='m-auto py-5'>First Step 2022 &copy; All Rights Reserved</p>
         </div>
->>>>>>> dc3b7cf39bd37388619a93fdaa10357a13dd92b7:src/HelperComponents/Footer.jsx
     </div>
   )
 }
