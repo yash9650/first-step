@@ -8,7 +8,7 @@ export default function Footer() {
             <div className="row footer-text">
                 <div className={`col-2 ${classes['company-name']}`}><h3>First Step</h3></div>
                 <div className="col-4">
-                    <h5 className='footer-links-headings'>Contact us</h5>
+                    <h5 className={classes['footer-links-headings']}>Contact us</h5>
                     <div className="row">Call: 1800 111 111</div>
                     <div className="row">Email: info@firststep.com</div>
                     <div className="row">Address: 12/3, MG Road <br />New Delhi 110024</div>
