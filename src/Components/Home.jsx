@@ -1,16 +1,12 @@
-const Home = () => {
+import React from "react";
+import '../css/home.css';
+
+function Home() {
     return(
         <>
-        <div className="search">
-
+        <div className="search"></div>
+        <div className="head">
         </div>
-            <p>dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br /></p>
-            <p>dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br /></p>
-            <p>dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br /></p>
-            <p>dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br /></p>
-            <p>dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br /></p>
-            <p>dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br /></p>
-            <p>dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br />dummy-text <br /></p>
         </>
     );
 }
