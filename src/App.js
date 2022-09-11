@@ -1,10 +1,9 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import AuthContext from './context/auth-context';
 import Home from './Components/Home';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import Header from './HelperComponents/Header';
+import Footer from './HelperComponents/Footer';
 import About from './Components/About';
 
 
