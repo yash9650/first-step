@@ -1,6 +1,20 @@
-.footer{
+.footer-bottom{
     width: 100%;
     bottom:0;
     height:'10vh';
     text-align: center;
+}
+.company-name{
+    color:#6600cc;
+    font-style: italic;
+}
+.row{
+    color:#a3a3c2;
+}
+a{
+    text-decoration: none;
+    color:#666666;
+}
+a:hover{
+    color:black;
 }

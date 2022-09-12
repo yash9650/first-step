@@ -1,11 +1,12 @@
 import React from "react";
-import '../css/home.css';
+import classes from '../css/home.module.css';
 
 function Home() {
     return(
         <>
         <div className="search"></div>
-        <div className="head">
+        <div className={classes.head}>
+            
         </div>
         </>
     );
