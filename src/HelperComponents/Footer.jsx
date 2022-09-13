@@ -31,8 +31,11 @@ export default function Footer() {
             
             </div>
         </div>
-        <div className={classes["footer-bottom"]}><hr />
-            <p className='m-auto py-5'>First Step 2022 &copy; All Rights Reserved</p>
+        <div className={classes["footer-bottom"]}>
+            <div className="container">
+                <hr />
+                <p className='m-auto py-5'>First Step 2022 &copy; All Rights Reserved</p>
+            </div>
         </div>
     </div>
   )
