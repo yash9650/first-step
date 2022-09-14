@@ -31,9 +31,9 @@
     text-align: right;
 }
 .consult-img{
-    height:50vh;
+    height:70vh;
     width:40%;
-    background-image: url("../images/consult.jpg");
+    background-image: url("../images/doctor-consunlant.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -47,4 +47,7 @@
 .consult_button:hover{
     background-color: #6600cc;
     color:white;
+}
+.consult-our-doctor{
+    background-image: url("../images/white-background.jpg");
 }
