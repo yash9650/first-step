@@ -50,4 +50,6 @@
 }
 .consult-our-doctor{
     background-image: url("../images/white-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
