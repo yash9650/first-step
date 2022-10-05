@@ -1,0 +1,57 @@
+.login{
+    height: 100vh;
+    /* padding-top: 15vh; */
+    background-image: url('../images/red-white-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+.box{
+    border: 2px solid black;
+    width: 55vw;
+    margin: auto;
+    border-radius: 1rem;
+}
+.left{
+    /* background-color: rgb(255, 152, 152); */
+    /* color: aliceblue; */
+    color: brown;
+
+}
+.left img{
+    height: 40%;
+    margin-bottom: 0%;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    bottom: 0;
+    margin-top: 100%;
+}
+.right{
+    background-color: rgb(255, 82, 82);
+}
+.input{
+    border: 2px solid black;
+    width: 80%;
+}
+.label{
+    font-weight: bold;
+    /* color: aliceblue; */
+}
+.login-btn{
+    border-radius: 1rem;
+    transition: 0.5s;
+    font-weight: 500;
+}
+.login-btn:hover{
+    border-radius: 0rem;
+    transition: 0.5s;
+    font-weight: bold;
+}
+.register-login-link{
+    text-decoration: none;
+    color: black;
+}
+.register-login-link:hover{
+    text-decoration: underline;
+}
