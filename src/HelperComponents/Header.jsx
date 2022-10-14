@@ -27,7 +27,7 @@ export default function Header() {
 
             </Nav>
             <Nav>
-              <Form className="d-flex">
+              <Form className="d-flex" action='/detail'>
                 <Form.Control
                   type="search"
                   placeholder="Search"

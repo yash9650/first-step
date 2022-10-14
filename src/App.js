@@ -7,6 +7,7 @@ import Footer from './HelperComponents/Footer';
 import About from './Components/About';
 import Login from './Components/Login';
 import Register from './Components/Register';
+import Detail from './Components/Detail';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/detail" element={<Detail />} />
           </Routes>
           <Footer />
         </div>
