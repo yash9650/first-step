@@ -88,7 +88,7 @@ export default function Detail() {
                     <li className='py-2'><a href='#prevention'>Prevention</a></li>
                 </ul>
                 <img src={lungCancer1} className='py-3' height="300" alt="lung-cancer" />
-                <img src={lungCancer2} className='py-5 my-5' height="300" alt="lung-cancer" />
+                <img src={lungCancer2} className='py-5 my-5' height="400" alt="lung-cancer" />
             </div>
         </div>
     </div>
