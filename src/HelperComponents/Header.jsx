@@ -5,8 +5,23 @@ import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Header() {
+
+  const list = useSelector(state => state.disease.data);
+  const [loading, setLoading] = useState(false);
+  
+  useEffect(()=>{
+    if(list.length === 0){
+      setLoading(true)
+    }else{
+      console.log(list)
+    }
+  },[list])
+
   return (
     <div className='p-2 sticky-top' style={{backgroundColor:'white', boxShadow:' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
