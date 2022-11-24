@@ -5,12 +5,22 @@ import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Header() {
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-  }
+  const list = useSelector(state => state.disease.data);
+  const [loading, setLoading] = useState(false);
+  
+  useEffect(()=>{
+    if(list.length === 0){
+      setLoading(true)
+    }else{
+      console.log(list)
+    }
+  },[list])
 
   return (
     <div className='p-2 sticky-top' style={{backgroundColor:'white', boxShadow:' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
@@ -21,8 +31,8 @@ export default function Header() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="/">Link2</Nav.Link>
-              <Nav.Link as={Link} to="/">Link3</Nav.Link>
+              <Nav.Link as={Link} to="/detail">Cancer</Nav.Link>
+              <Nav.Link as={Link} to="/">Covid 19</Nav.Link>
               <Nav.Link as={Link} to="/about">About us</Nav.Link>
               <Nav.Link as={Link} to="/login">
                 Login
@@ -32,7 +42,7 @@ export default function Header() {
 
             </Nav>
             <Nav>
-              <Form className="d-flex" onSubmit={submitHandler}>
+              <Form className="d-flex" action='/detail'>
                 <Form.Control
                   type="search"
                   placeholder="Search"

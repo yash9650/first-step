@@ -7,9 +7,20 @@ import Footer from './HelperComponents/Footer';
 import About from './Components/About';
 import Login from './Components/Login';
 import Register from './Components/Register';
+import Detail from './Components/Detail';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getData } from './store/DiseaseSlice';
 
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(getData());
+  },[]);
+
   return (
       <Router>
         <div className="App">
@@ -19,6 +30,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/detail" element={<Detail />} />
           </Routes>
           <Footer />
         </div>

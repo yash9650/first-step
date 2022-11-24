@@ -1,0 +1,16 @@
+.heading{
+    color: #6600cc;
+}
+.right_side{
+    position: -webkit-sticky;
+    position: sticky;
+    display: block;
+    top:0;
+}
+.right_side ul li a{
+    text-decoration: none;
+    color: black;
+}
+h3{
+    font-weight: bold;
+}

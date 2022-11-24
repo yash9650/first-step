@@ -24,9 +24,9 @@ export default function Footer() {
                 </div>
                 <div className="col-sm-2">
                     <h5>Quick Links</h5>
-                    <div className="row"><p><Link to="/">link1</Link></p></div>
-                    <div className="row"><p><Link to="/">link2</Link></p></div>
-                    <div className="row"><p><Link to="/">link</Link></p></div>
+                    <div className="row"><p><Link to="/detail">Caner</Link></p></div>
+                    <div className="row"><p><Link to="/">Covid 19</Link></p></div>
+                    <div className="row"><p><Link to="/">Dengue</Link></p></div>
                 </div>
             </div>
         </div>
