@@ -16,8 +16,8 @@ export default function Header() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="/">Link2</Nav.Link>
-              <Nav.Link as={Link} to="/">Link3</Nav.Link>
+              <Nav.Link as={Link} to="/detail">Cancer</Nav.Link>
+              <Nav.Link as={Link} to="/">Covid 19</Nav.Link>
               <Nav.Link as={Link} to="/about">About us</Nav.Link>
               <Nav.Link as={Link} to="/login">
                 Login
