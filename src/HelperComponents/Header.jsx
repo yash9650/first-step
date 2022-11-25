@@ -8,9 +8,10 @@ import Button from 'react-bootstrap/Button';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
-
+  const navigate = useNavigate();
   const list = useSelector(state => state.disease.data);
   const [loading, setLoading] = useState(false);
   
@@ -18,9 +19,18 @@ export default function Header() {
     if(list.length === 0){
       setLoading(true)
     }else{
-      console.log(list)
     }
-  },[list])
+  },[list]);
+
+
+  const changeHandler = (e) => {
+    console.log(e.target.value);
+  }
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    navigate('/detail',{state:{id:"637c56901d5edc57382b5dec"}});
+  }
 
   return (
     <div className='p-2 sticky-top' style={{backgroundColor:'white', boxShadow:' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
@@ -42,12 +52,13 @@ export default function Header() {
 
             </Nav>
             <Nav>
-              <Form className="d-flex" action='/detail'>
+              <Form className="d-flex" onSubmit={submitHandler}>
                 <Form.Control
                   type="search"
                   placeholder="Search"
                   className="me-2"
                   aria-label="Search"
+                  onChange={changeHandler}
                 />
                 <Button type="submit" variant="light"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" className="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg></Button>
               </Form>
