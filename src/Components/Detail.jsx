@@ -26,7 +26,6 @@ export default function Detail() {
                     <li>Headache</li>
                 </ul></p>
                 
-                
                 <h2 className='py-2' id='homeRemedies'>Home Remedies</h2>
                 <p>Lung cancer typically doesn't cause signs and symptoms in its earliest stages. Signs and symptoms of lung cancer typically occur when the disease is advanced. <br /><br />Signs and symptoms of lung cancer may include: <br /><br />
                 <ul>
@@ -43,8 +42,7 @@ export default function Detail() {
                 <p>Make an appointment with your doctor if you have any persistent signs or symptoms that worry you. <br /><br />If you smoke and have been unable to quit, make an appointment with your doctor. Your doctor can recommend strategies for quitting smoking, such as counseling, medications and nicotine replacement products.</p>
 
                 <h2 className='py-2' id="healthEffects">Health Effects</h2>
-                <p>Doctors believe smoking causes lung cancer by damaging the cells that line the lungs. When you inhale cigarette smoke, which is full of cancer-causing substances (carcinogens), changes in the lung tissue begin almost immediately. <br /><br />At first your body may be able to repair this damage. But with each repeated exposure, normal cells that line your lungs are increasingly damaged. Over time, the damage causes cells to act abnormally and eventually cancer may develop. <br /></p>
-                
+                <p>Doctors believe smoking causes lung cancer by damaging the cells that line the lungs. When you inhale cigarette smoke, which is full of cancer-causing substances (carcinogens), changes in the lung tissue begin almost immediately. <br /><br />At first your body may be able to repair this damage. But with each repeated exposure, normal cells that line your lungs are increasingly damaged. Over time, the damage causes cells to act abnormally and eventually cancer may develop. <br /></p> 
             </div>
 
             <div className={`${classes.right_side} col-sm-4 px-5`}>
@@ -56,6 +54,7 @@ export default function Detail() {
                     <li className='py-2'><a href='#type'>Type</a></li>
                     <li className='py-2'><a href='#healthEffects'>Health Effects</a></li>
                 </ul>
+                
                 <img src={lungCancer1} className='py-3' height="300" alt="lung-cancer" />
                 <img src={lungCancer2} className='py-5 my-5' height="400" alt="lung-cancer" />
             </div>
