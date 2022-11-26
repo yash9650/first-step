@@ -19,8 +19,9 @@ export const {addData} = DiseaseSlice.actions;
 export const getData = createAsyncThunk(
     'data/fetch',
    async (_, {dispatch}) => {
-    const response = await fetch('http://localhost:6060/data');
+    const response = await fetch('/data');
     const result = await response.json();
+    console.log(result);
     dispatch(addData(result));
    }
 );
