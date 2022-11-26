@@ -13,7 +13,7 @@ export default function Detail() {
     useEffect(()=>{
 
         (async()=>{
-            const response = await fetch(`/detail?id=${location.state.id}&type=disease`);
+            const response = await fetch(`/disease/${location.state.id}`);
             await response.json().then(res => {
                 setData(res);
                 setIsLoading(false);
