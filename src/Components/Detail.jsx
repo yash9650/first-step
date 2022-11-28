@@ -2,23 +2,16 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import classes from '../css/detail.module.css';
+import Loading from '../HelperComponents/Loading';
 import lungCancer1 from '../images/lung-cancer1.jpg';
 import lungCancer2 from '../images/lung-cancer2.png';
 
 export default function Detail() {
     const [data, setData] = useState({});
-    const [isloading, setIsLoading] = useState(true);
-    const {type,id} = useParams();
+    const [isloading, setIsLoading] = useState(false);
+    const {id} = useParams();
     useEffect(()=>{
-
-        // (async()=>{
-        //     const response = await fetch(`/disease/${location.state.id}`);
-        //     await response.json().then(res => {
-        //         setData(res);
-        //         setIsLoading(false);
-        //     })
-        // })();
-
+        setIsLoading(true);
         fetch(`/disease/${id}`).then(response =>{
             if(!response.ok){
                 if(response.status === 500) throw new Error("Check your internet connection");
@@ -32,12 +25,12 @@ export default function Detail() {
             window.alert(error.message);
         })
 
-    },[]);
+    },[id]);
 
 
   return (
     <div className='container'>
-        {!isloading && <div className="row">
+        {!isloading ? <div className="row">
             <h1 className={`${classes.heading} py-4 mt-4 px-5`}>{data.dName}</h1>
             <div className={`${classes.left_side} col-sm-8 px-5`}>
 
@@ -75,7 +68,7 @@ export default function Detail() {
                 <img src={lungCancer1} className='py-3' height="300" alt="lung-cancer" />
                 <img src={lungCancer2} className='py-5 my-5' height="400" alt="lung-cancer" />
             </div>
-        </div>}
+        </div> : <Loading/>}
     </div>
   )
 }
