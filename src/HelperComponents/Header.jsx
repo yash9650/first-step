@@ -16,8 +16,6 @@ export default function Header() {
   const [loading, setLoading] = useState(false);
   const [value, setValue] = useState("");
   const {diseaseList,symptomList} = useSearch(value);
-  
-
   const changeHandler = (e) => {
     setValue(e.target.value);
   }
@@ -51,6 +49,10 @@ export default function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <div className="displayResults d-flex" style={{width:'80vw', border:'1px solid black'}}>
+        {diseaseList.map(e => <div><h4 key={e._id}>{e.dName}</h4></div>)}
+        {/* {symptomList.map(e => <div><h4 key={e._id}>{e.symptoms}</h4> <br /></div>)} */}
+      </div>
     </div>
   )
 }

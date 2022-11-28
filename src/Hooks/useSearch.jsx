@@ -3,8 +3,8 @@ import { useSelector ,useDispatch} from "react-redux";
 import { getData } from '../store/DiseaseSlice';
 
 const useSearch = (search = "") => {
-    const [diseaseList, setDiseaseList] = useState();
-    const [symptomList, setSymptomList] = useState();
+    const [diseaseList, setDiseaseList] = useState([]);
+    const [symptomList, setSymptomList] = useState([]);
     const list = useSelector(state => state.disease.data);
     const dispatch = useDispatch();
 
@@ -13,13 +13,15 @@ const useSearch = (search = "") => {
         const newSymp = symptoms.filter(e => {
             return e.trim().toLowerCase().includes(search.toLowerCase());
         })
-
         return newSymp;
     }
 
     useEffect(()=>{
-        if(search.length === 0 || list.length === 0)
+        if(search.length === 0 || list.length === 0){
+            setDiseaseList([]);
+            setSymptomList([]);
             return;
+        }
         const timer = setTimeout(()=>{
             const disease = list.filter((e)=>{
                 return e.dName.toLowerCase().includes(search.toLowerCase());
@@ -32,6 +34,7 @@ const useSearch = (search = "") => {
             const filteredSymptoms = mapSymptom.filter(e => {
                 return e.symptoms.length === 0 ? false : true;
             })
+            console.log(filteredSymptoms);
             setDiseaseList(disease);
             setSymptomList(filteredSymptoms);
         },800);
