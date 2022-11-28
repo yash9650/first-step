@@ -17,6 +17,7 @@ const useSearch = (search = "") => {
     }
 
     useEffect(()=>{
+        console.log();
         if(search.length === 0 || list.length === 0){
             setDiseaseList([]);
             setSymptomList([]);

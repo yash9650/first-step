@@ -19,7 +19,7 @@ export default function Header() {
   const changeHandler = (e) => {
     setValue(e.target.value);
   }
-
+  console.log(diseaseList);
   const submitHandler = (e) => {
     e.preventDefault();
     navigate('/disease/637c56901d5edc57382b5dec');
