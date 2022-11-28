@@ -17,7 +17,6 @@ const useSearch = (search = "") => {
     }
 
     useEffect(()=>{
-        console.log();
         if(search.length === 0 || list.length === 0){
             setDiseaseList([]);
             setSymptomList([]);
@@ -31,11 +30,10 @@ const useSearch = (search = "") => {
             const mapSymptom = list.map((e)=>{
                 let newSymp = searchSymptom(e.symptoms);
                 return {_id: e._id, symptoms: newSymp};
-            })
+            });
             const filteredSymptoms = mapSymptom.filter(e => {
                 return e.symptoms.length === 0 ? false : true;
-            })
-            console.log(filteredSymptoms);
+            });
             setDiseaseList(disease);
             setSymptomList(filteredSymptoms);
         },800);

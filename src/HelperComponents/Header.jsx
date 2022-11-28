@@ -19,7 +19,6 @@ export default function Header() {
   const changeHandler = (e) => {
     setValue(e.target.value);
   }
-  console.log(diseaseList);
   const submitHandler = (e) => {
     e.preventDefault();
     navigate('/disease/637c56901d5edc57382b5dec');
@@ -44,15 +43,25 @@ export default function Header() {
                 </Nav.Link>
             </Nav>
             <Nav>
-              <SearchResults />
+            <Form className="d-flex align-items-center" onSubmit={submitHandler}>
+      <Form.Control 
+        type="search"
+        placeholder="Search"
+        className="me-2"
+        aria-label="Search"
+        onChange={changeHandler}
+      />
+      <Button type="submit" variant="light" className=' d-flex align-items-center' style={{height:40}}><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" className="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg></Button>
+    </Form>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className="displayResults d-flex" style={{width:'80vw', border:'1px solid black'}}>
-        {diseaseList.map(e => <div><h4 key={e._id}>{e.dName}</h4></div>)}
-        {/* {symptomList.map(e => <div><h4 key={e._id}>{e.symptoms}</h4> <br /></div>)} */}
-      </div>
+      
+      {diseaseList.length > 0 && <div className="displayResults px-5 pt-4" id="displaySearches" style={{width:'98vw', position:'absolute',display:"flex", flexDirection:'column', background:'rgba(255,255,255,0.8)'}}>
+        {diseaseList.slice(0,6).map(e => <div key={e._id}><button className='btn btn-link' style={{textDecoration:'none', color:'black', width:'100%', textAlign:'left'}}>{e.dName} </button><hr /></div>)}
+        {/* {symptomList.map(e => <div><p key={e._id}>{e.symptoms}</p> <br /></div>)} */}
+      </div>}
     </div>
   )
 }
