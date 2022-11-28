@@ -5,31 +5,23 @@ import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useSearch from '../Hooks/useSearch';
 
 export default function Header() {
   const navigate = useNavigate();
-  const list = useSelector(state => state.disease.data);
   const [loading, setLoading] = useState(false);
-  
-  useEffect(()=>{
-    if(list.length === 0){
-      setLoading(true)
-    }else{
-    }
-  },[list]);
-
-
+  const [value, setValue] = useState("");
+  const {diseaseList,symptomList} = useSearch(value);
   const changeHandler = (e) => {
-    console.log(e.target.value);
+    setValue(e.target.value);
   }
 
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate('/detail',{state:{id:"637c56901d5edc57382b5dec"}});
+    navigate('/disease/637c56901d5edc57382b5dec');
   }
 
   return (
@@ -41,8 +33,8 @@ export default function Header() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="/detail">Cancer</Nav.Link>
-              <Nav.Link as={Link} to="/">Covid 19</Nav.Link>
+              <Nav.Link as={Link} to="/cancer">Cancer</Nav.Link>
+              <Nav.Link as={Link} to="/covid">Covid 19</Nav.Link>
               <Nav.Link as={Link} to="/about">About us</Nav.Link>
               <Nav.Link as={Link} to="/login">
                 Login
@@ -66,6 +58,10 @@ export default function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <div className="displayResults d-flex" style={{width:'80vw', border:'1px solid black'}}>
+        {diseaseList.map(e => <div><h4 key={e._id}>{e.dName}</h4></div>)}
+        {/* {symptomList.map(e => <div><h4 key={e._id}>{e.symptoms}</h4> <br /></div>)} */}
+      </div>
     </div>
   )
 }
