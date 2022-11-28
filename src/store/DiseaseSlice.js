@@ -31,7 +31,6 @@ export const getData = createAsyncThunk(
         fetch('/data').then(response => {
             if(response.ok){
                 response.json().then(result => {
-                    console.log(result);
                     dispatch(addData(result));
                 }).catch(err => window.alert(err.message));
             }else{

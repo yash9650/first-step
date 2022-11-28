@@ -10,7 +10,6 @@ import Register from './Components/Register';
 import Detail from './Components/Detail';
 import PageNotFound from './HelperComponents/PageNotFound';
 
-
 function App() {
   
   return (
@@ -22,7 +21,7 @@ function App() {
             <Route path="/about" element={<About />}/>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/:type/:id" element={<Detail />} />
+            <Route path="/disease/:id" element={<Detail />} />
             <Route path="*" element={<PageNotFound/>} />
           </Routes>
           <Footer />
