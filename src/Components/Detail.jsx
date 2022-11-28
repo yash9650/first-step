@@ -1,24 +1,37 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import classes from '../css/detail.module.css';
 import lungCancer1 from '../images/lung-cancer1.jpg';
 import lungCancer2 from '../images/lung-cancer2.png';
 
 export default function Detail() {
-    const location = useLocation();
     const [data, setData] = useState({});
     const [isloading, setIsLoading] = useState(true);
-
+    const {type,id} = useParams();
     useEffect(()=>{
 
-        (async()=>{
-            const response = await fetch(`/disease/${location.state.id}`);
-            await response.json().then(res => {
-                setData(res);
-                setIsLoading(false);
-            })
-        })();
+        // (async()=>{
+        //     const response = await fetch(`/disease/${location.state.id}`);
+        //     await response.json().then(res => {
+        //         setData(res);
+        //         setIsLoading(false);
+        //     })
+        // })();
+
+        fetch(`/disease/${id}`).then(response =>{
+            if(!response.ok){
+                if(response.status === 500) throw new Error("Check your internet connection");
+                throw new Error("Something went wrong!!");
+            }
+            return response.json();
+        }).then(result => {
+            setData(result);
+            setIsLoading(false);
+        }).catch(error => {
+            window.alert(error.message);
+        })
+
     },[]);
 
 

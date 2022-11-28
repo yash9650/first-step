@@ -2,12 +2,24 @@ import React from 'react'
 import Dropdown from 'react-bootstrap/Dropdown';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
 
 
 export default function SearchResults() {
+  const [value,setValue]=useState('');
+  const handleSelect=(e)=>{
+    console.log(e);
+    setValue(e)
+  }
   return (
     <>
-    <Form className="d-flex align-items-center"/* action='/detail'*/>
+    <Form className="d-flex align-items-center"  /* action='/detail'*/>
+      <Form.Control 
+        type="search"
+        placeholder="Search"
+        className="me-2"
+        aria-label="Search"
+      />
       <Dropdown>
       <Dropdown.Toggle variant="none" id="dropdown-basic" className="d-flex align-items-center p-0">
       <input
@@ -15,19 +27,22 @@ export default function SearchResults() {
         type="text"
         className="form-control"
         placeholder="Search"
-        
         />
       </Dropdown.Toggle>
-        <Dropdown.Menu align={{lg:'end'}} style={{width:'80vw'}}>
-          <Dropdown.Header>Disease</Dropdown.Header>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+        <Dropdown.Menu 
+          align={{lg:'end'}} 
+          style={{width:'80vw'}}
+          
+        >
+          <Dropdown.Header >Disease</Dropdown.Header>
+          <Dropdown.Item eventKey="Action1" onSelect={handleSelect}>Action</Dropdown.Item>
+          <Dropdown.Item eventKey="Action2" onSelect={handleSelect}>Another action</Dropdown.Item>
+          <Dropdown.Item>Something else</Dropdown.Item>
           <Dropdown.Divider />
           <Dropdown.Header>Symptoms</Dropdown.Header>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          <Dropdown.Item>Action</Dropdown.Item>
+          <Dropdown.Item>Another action</Dropdown.Item>
+          <Dropdown.Item>Something else</Dropdown.Item>
 
         </Dropdown.Menu>
         </Dropdown>

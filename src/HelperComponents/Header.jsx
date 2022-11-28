@@ -3,32 +3,28 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import SearchResults from './SearchResults';
 import { useNavigate } from 'react-router-dom';
+import useSearch from '../Hooks/useSearch';
 
 export default function Header() {
   const navigate = useNavigate();
-  const list = useSelector(state => state.disease.data);
   const [loading, setLoading] = useState(false);
+  const [value, setValue] = useState("");
+  const {diseaseList,symptomList} = useSearch(value);
   
-  useEffect(()=>{
-    if(list.length === 0){
-      setLoading(true)
-    }else{
-    }
-  },[list]);
-
 
   const changeHandler = (e) => {
-    console.log(e.target.value);
+    setValue(e.target.value);
   }
 
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate('/detail',{state:{id:"637c56901d5edc57382b5dec"}});
+    navigate('/disease/637c56901d5edc57382b5dec');
   }
 
   return (
@@ -40,8 +36,8 @@ export default function Header() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="/detail">Cancer</Nav.Link>
-              <Nav.Link as={Link} to="/">Covid 19</Nav.Link>
+              <Nav.Link as={Link} to="/cancer">Cancer</Nav.Link>
+              <Nav.Link as={Link} to="/covid">Covid 19</Nav.Link>
               <Nav.Link as={Link} to="/about">About us</Nav.Link>
               <Nav.Link as={Link} to="/login">
                 Login
