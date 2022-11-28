@@ -44,8 +44,6 @@ export default function Detail() {
                 </ul>
                 
                 <h2 className='py-2' id='homeRemedies'>Home Remedies</h2>
-                <p>Lung cancer typically doesn't cause signs and symptoms in its earliest stages. Signs and symptoms of lung cancer typically occur when the disease is advanced. <br /><br />Signs and symptoms of lung cancer may include: <br /><br />
-                </p>
                 <ul>
                     {data.remedies && data.remedies.map((e,i) => <li key={i}>{e}</li>)}
                 </ul>
