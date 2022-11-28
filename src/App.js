@@ -8,29 +8,22 @@ import About from './Components/About';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import Detail from './Components/Detail';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { getData } from './store/DiseaseSlice';
+import PageNotFound from './HelperComponents/PageNotFound';
 
 
 function App() {
-
-  const dispatch = useDispatch();
-
-  useEffect(()=>{
-    dispatch(getData());
-  },[]);
-
+  
   return (
       <Router>
         <div className="App">
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About />}/>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/detail" element={<Detail />} />
+            <Route path="/:type/:id" element={<Detail />} />
+            <Route path="*" element={<PageNotFound/>} />
           </Routes>
           <Footer />
         </div>
