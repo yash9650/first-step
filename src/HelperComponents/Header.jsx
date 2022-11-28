@@ -7,9 +7,10 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import SearchResults from './SearchResults';
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
-
+  const navigate = useNavigate();
   const list = useSelector(state => state.disease.data);
   const [loading, setLoading] = useState(false);
   
@@ -17,9 +18,18 @@ export default function Header() {
     if(list.length === 0){
       setLoading(true)
     }else{
-      console.log(list)
     }
-  },[list])
+  },[list]);
+
+
+  const changeHandler = (e) => {
+    console.log(e.target.value);
+  }
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    navigate('/detail',{state:{id:"637c56901d5edc57382b5dec"}});
+  }
 
   return (
     <div className='p-2 sticky-top' style={{backgroundColor:'white', boxShadow:' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
