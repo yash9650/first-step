@@ -5,6 +5,7 @@ import { getData } from '../store/DiseaseSlice';
 const useSearch = (search = "") => {
     const [diseaseList, setDiseaseList] = useState([]);
     const [symptomList, setSymptomList] = useState([]);
+    const [isLoading,setIsLoading] = useState(false);
     const list = useSelector(state => state.disease.data);
     const dispatch = useDispatch();
 
@@ -22,6 +23,7 @@ const useSearch = (search = "") => {
             setSymptomList([]);
             return;
         }
+        setIsLoading(true);
         const timer = setTimeout(()=>{
             const disease = list.filter((e)=>{
                 return e.dName.toLowerCase().includes(search.toLowerCase());
@@ -34,6 +36,7 @@ const useSearch = (search = "") => {
             const filteredSymptoms = mapSymptom.filter(e => {
                 return e.symptoms.length === 0 ? false : true;
             });
+            setIsLoading(false);
             setDiseaseList(disease);
             setSymptomList(filteredSymptoms);
         },800);
@@ -48,7 +51,7 @@ const useSearch = (search = "") => {
         dispatch(getData());
     },[]);
 
-    return {diseaseList,symptomList};
+    return {diseaseList,symptomList,isLoading};
 
 }
 
