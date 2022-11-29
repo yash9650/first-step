@@ -18,7 +18,7 @@ export default function Hospitals() {
             <p className=''>Vip Road, Zirakpur Ho, Near Chandigarh City Center, Zirakpur-140603 <br />
             Private Hospital <br />
            <b>www.amcarehospital.com</b>  <br />
-            <Spinner animation="grow" variant="success" /> Beds available now 
+            <Spinner animation="grow" variant="success" size='sm' /> Beds available now 
             </p>
           </div>
           <div className={`d-flex align-content-center my-auto justify-content-center col-3 ${classes.hospitalBtn}`}>
@@ -35,7 +35,7 @@ export default function Hospitals() {
             <p className=''>Vip Road, Zirakpur Ho, Near Chandigarh City Center, Zirakpur-140603 <br />
             Private Hospital <br />
            <b>www.amcarehospital.com</b>  <br />
-            <Spinner animation="grow" variant="success" /> Beds available now 
+            <Spinner animation="grow" variant="success" size='sm' /> Beds available now 
             </p>
           </div>
           <div className={`d-flex align-content-center my-auto justify-content-center col-3 ${classes.hospitalBtn}`}>
@@ -52,7 +52,7 @@ export default function Hospitals() {
             <p className=''>Vip Road, Zirakpur Ho, Near Chandigarh City Center, Zirakpur-140603 <br />
             Private Hospital <br />
            <b>www.amcarehospital.com</b>  <br />
-            <Spinner animation="grow" variant="success" /> Beds available now 
+            <Spinner animation="grow" variant="success" size='sm' /> Beds available now 
             </p>
           </div>
           <div className={`d-flex align-content-center my-auto justify-content-center col-3 ${classes.hospitalBtn}`}>
@@ -69,7 +69,7 @@ export default function Hospitals() {
             <p className=''>Vip Road, Zirakpur Ho, Near Chandigarh City Center, Zirakpur-140603 <br />
             Private Hospital <br />
            <b>www.amcarehospital.com</b>  <br />
-            <Spinner animation="grow" variant="success" /> Beds available now 
+            <Spinner animation="grow" variant="success" size='sm' /> Beds available now 
             </p>
           </div>
           <div className={`d-flex align-content-center my-auto justify-content-center col-3 ${classes.hospitalBtn}`}>
@@ -86,7 +86,7 @@ export default function Hospitals() {
             <p className=''>Vip Road, Zirakpur Ho, Near Chandigarh City Center, Zirakpur-140603 <br />
             Private Hospital <br />
            <b>www.amcarehospital.com</b>  <br />
-            <Spinner animation="grow" variant="success" /> Beds available now 
+            <Spinner animation="grow" variant="success" size='sm' /> Beds available now 
             </p>
           </div>
           <div className={`d-flex align-content-center my-auto justify-content-center col-3 ${classes.hospitalBtn}`}>

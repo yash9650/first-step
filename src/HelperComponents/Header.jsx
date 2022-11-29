@@ -41,7 +41,7 @@ export default function Header() {
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="/hospitals">Hospitals Nearby</Nav.Link>
-              <Nav.Link as={Link} to="/covid">Covid 19</Nav.Link>
+              <Nav.Link target="/" href="https://www.worldometers.info/coronavirus/">Covid 19</Nav.Link>
               <Nav.Link as={Link} to="/about">About us</Nav.Link>
               <Nav.Link as={Link} to="/login">
                 Login
