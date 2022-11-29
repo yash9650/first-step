@@ -1,0 +1,33 @@
+.aboutusImg{
+    background-image: url("../images/about-us.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 60vh;
+}
+.contactusText{
+    color:aliceblue;
+    background-color: #6600cc;
+}
+.contactusText h1{
+    transform: rotate(-90deg);
+}
+.feedbackButton:hover{
+    color: #6600cc;
+    background-color: white;
+    border: #6600cc 1px solid;
+}
+.feedbackButton{
+    background-color: #6600cc;
+    color:white;
+    border: 1px solid white;
+}
+.contactImg{
+    background-image: url("../images/contact.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.contactMainHeading{
+    color:#6600cc;
+}

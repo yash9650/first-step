@@ -9,6 +9,8 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import Detail from './Components/Detail';
 import PageNotFound from './HelperComponents/PageNotFound';
+import Hospitals from './Components/Hospitals';
+import Covid from './Components/Covid';
 
 function App() {
   
@@ -22,6 +24,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/disease/:id" element={<Detail />} />
+            <Route path="/hospitals" element={<Hospitals />} />
+            <Route path="/covidUpdates" element={<Covid />} />
+
             <Route path="*" element={<PageNotFound/>} />
           </Routes>
           <Footer />
