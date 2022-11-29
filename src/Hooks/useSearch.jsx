@@ -21,6 +21,7 @@ const useSearch = (search = "") => {
         if(search.length === 0 || list.length === 0){
             setDiseaseList([]);
             setSymptomList([]);
+            setIsLoading(false);
             return;
         }
         setIsLoading(true);
@@ -31,7 +32,7 @@ const useSearch = (search = "") => {
             setDiseaseList(disease);
             const mapSymptom = list.map((e)=>{
                 let newSymp = searchSymptom(e.symptoms);
-                return {_id: e._id, symptoms: newSymp};
+                return {_id: e._id,dName: e.dName, symptoms: newSymp};
             });
             const filteredSymptoms = mapSymptom.filter(e => {
                 return e.symptoms.length === 0 ? false : true;

@@ -22,11 +22,20 @@ export default function Header() {
   }
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate('/disease/637c56901d5edc57382b5dec');
+    setToggleDropDown(false);
+    if(value.length === 0){
+      return
+    }
+    navigate('/diseases',{
+      state: {
+        diseaseList,
+        symptomList
+      }
+    });
   }
 
   const clickHandler = (e) => {
-    // setValue(e.dName);
+    setValue(e.dName);
     setToggleDropDown(false);
     navigate(`/disease/${e._id}`);
   }
@@ -59,7 +68,7 @@ export default function Header() {
                   onChange={changeHandler}
                   value={value}
                 />
-                <Button type="submit" variant="light" className=' d-flex align-items-center' style={{ height: 40 }}><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" className="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" /></svg></Button>
+                <Button type="submit" disabled={isLoading} variant="light" className=' d-flex align-items-center' style={{ height: 40 }}><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" className="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" /></svg></Button>
               </Form>
             </Nav>
           </Navbar.Collapse>

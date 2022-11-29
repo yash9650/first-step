@@ -11,6 +11,7 @@ import Detail from './Components/Detail';
 import PageNotFound from './HelperComponents/PageNotFound';
 import Hospitals from './Components/Hospitals';
 import Covid from './Components/Covid';
+import List from './Components/List';
 
 function App() {
   
@@ -26,7 +27,7 @@ function App() {
             <Route path="/disease/:id" element={<Detail />} />
             <Route path="/hospitals" element={<Hospitals />} />
             <Route path="/covidUpdates" element={<Covid />} />
-
+            <Route path="/diseases" element={<List />} />
             <Route path="*" element={<PageNotFound/>} />
           </Routes>
           <Footer />
