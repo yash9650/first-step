@@ -14,7 +14,7 @@ export default function Header() {
   const navigate = useNavigate();
   const [value, setValue] = useState("");
   const [toggleDropDown,setToggleDropDown] = useState(false);
-  const { diseaseList, symptomList, isLoading } = useSearch(value);
+  const [ diseaseList, symptomList, isLoading ] = useSearch(value);
 
   const changeHandler = (e) => {
     setToggleDropDown(true);
@@ -33,6 +33,7 @@ export default function Header() {
       }
     });
   }
+
 
   const clickHandler = (e) => {
     setValue(e.dName);
