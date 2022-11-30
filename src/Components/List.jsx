@@ -9,12 +9,12 @@ export default function List() {
     }
 
     return <div>
-        <h2>Disease List: </h2><br />
+        {state.diseaseList.length > 0 && <h2>Disease List: </h2>}<br />
         <span>{state.diseaseList.map((e) => <div key={e._id}>
             <button onClick={() => clickHandler(e)} className='btn btn-link'
                 style={{ textDecoration: 'none', color: 'black', width: '100%', textAlign: 'left' }}>
                 {e.dName} </button><hr /></div>)}</span>
-        <br /><h2>Symptoms List: </h2><br />
+        <br />{state.symptomList.length > 0 && <h2>Symptoms List: </h2>}<br />
         {state.symptomList.map((e) => {
             return e.symptoms.map((ele, i) => {
                 return <div key={e._id + i}>
