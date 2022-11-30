@@ -52,7 +52,7 @@ const useSearch = (search = "") => {
         dispatch(getData());
     },[]);
 
-    return {diseaseList,symptomList,isLoading};
+    return [diseaseList,symptomList,isLoading];
 
 }
 
