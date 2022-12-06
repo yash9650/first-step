@@ -8,7 +8,7 @@ export default function List() {
         navigate(`/disease/${e._id}`);
     }
 
-    return <div>
+    return <div style={{minHeight: '60vh'}}>
         {state.diseaseList.length > 0 && <h2>Disease List: </h2>}<br />
         <span>{state.diseaseList.map((e) => <div key={e._id}>
             <button onClick={() => clickHandler(e)} className='btn btn-link'
