@@ -12,7 +12,7 @@ export default function Detail() {
     const {id} = useParams();
     useEffect(()=>{
         setIsLoading(true);
-        fetch(`/disease/${id}`).then(response =>{
+        fetch(`/data/${id}`).then(response =>{
             if(!response.ok){
                 if(response.status === 500) throw new Error("Check your internet connection");
                 throw new Error("Something went wrong!!");
