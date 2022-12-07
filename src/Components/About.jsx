@@ -6,21 +6,24 @@ import Form from 'react-bootstrap/Form';
 export default function About() {
   return (
     <div>
-      <div className="container">
-        <div className="row mb-5 py-5">
-          <div className="my-auto col-6 p-5">
-            <h2>About us</h2>
-            <p className='py-4'>
-              <b>First Step</b> is a First Aid Emergency website that helps people to take necessary steps to reduce damage in case of medical emergencies. It identifies the disease based on symptoms and provide accurate information. Our website also provides home remedies to some symptoms that can be reduced at home. It also helps to identify any hospitals nearby.
-              
-            </p>
+      <div className={`${classes.about} mb-5`}>
+        <div className="container d-flex my-auto" style={{backgroundColor:'white', height:'100%'}}>
+          <div className="row py-5">
+            <div className="my-auto col-6 p-5">
+              <h2>About us</h2>
+              <p className='py-4'>
+                <b>First Step</b> is a First Aid Emergency website that helps people to take necessary steps to reduce damage in case of medical emergencies. It identifies the disease based on symptoms and provide accurate information. Our website also provides home remedies to some symptoms that can be reduced at home. It also helps to identify any hospitals nearby.   
+                
+              </p>
+            </div>
+            <div className={`col-6 ${classes.aboutusImg}`}></div>
           </div>
-          <div className={`col-6 ${classes.aboutusImg}`}></div>
         </div>
 
-        <hr />
+      </div>
+      {/* <hr /> */}
 
-
+      <div className="mx-5 px-5">
         <div className="row my-5 py-3">
           <h1 className={`d-flex ${classes.contactMainHeading} pb-5 justify-content-center`}>We would like to hear from you!</h1>
           <div className={`d-flex col-3 ${classes.contactusText} justify-content-center align-content-center`}>
