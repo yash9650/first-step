@@ -27,10 +27,14 @@ export default function About() {
         body: JSON.stringify(data)
       }).then((response) => response.json())
       .then(result => {
-        console.log(result);
+        nameRef.current.value = "";
+        emailRef.current.value = "";
+        subjectRef.current.value = "";
+        feedbackRef.current.value = "";
+        window.alert(result.message);
       })
       .catch(err => {
-        console.log(err);
+        window.alert("Something went wrong, try again!!!");
       });
     }
   };
