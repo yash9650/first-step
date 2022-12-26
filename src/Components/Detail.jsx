@@ -3,8 +3,6 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import classes from '../css/detail.module.css';
 import Loading from '../HelperComponents/Loading';
-import lungCancer1 from '../images/lung-cancer1.jpg';
-import lungCancer2 from '../images/lung-cancer2.png';
 
 export default function Detail() {
     const [data, setData] = useState({});
@@ -63,8 +61,8 @@ export default function Detail() {
                     <li className='py-2'><a href='#healthEffects'>Health Effects</a></li>
                 </ul>
                 
-                <img src={lungCancer1} className='py-3' height="300" alt="lung-cancer" />
-                <img src={lungCancer2} className='py-5 my-5' height="400" alt="lung-cancer" />
+                <img src={data.imageUrl && data.imageUrl[0]} className='py-3' height="300" alt={data.dName} />
+                <img src={data.imageUrl && data.imageUrl[1]} className='py-5 my-5' height="400" alt={data.dName} />
             </div>
         </div> : <Loading/>}
     </div>
