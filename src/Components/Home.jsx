@@ -15,7 +15,7 @@ function Home() {
             <div className="row">
                 <div className="col-sm-6 pt-5 mt-5">                
                     <h1 className={`${classes.consult_heading} pt-5 px-5` }>Consult a Doctor</h1>
-                    <Link to="/"><button className={`${classes.consult_button} py-2 px-3 my-3 mx-5`}>Click here</button></Link>
+                    <Link to="/hospitals"><button className={`${classes.consult_button} py-2 px-3 my-3 mx-5`}>Click here</button></Link>
                 </div>
                 <div className={`col-sm-6 px-5 mx-5 ${classes['consult-img']}`}>
                     {/* <img src={img2} alt="consult-our-doctor" /> */}
