@@ -1,4 +1,5 @@
 import React from 'react'
+import classes from '../css/header.module.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -51,7 +52,7 @@ export default function Header() {
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="/hospitals">Hospitals Nearby</Nav.Link>
-              <Nav.Link target="/" href="https://www.worldometers.info/coronavirus/">Covid 19</Nav.Link>
+              <Nav.Link target="/" href="https://www.worldometers.info/coronavirus/" className={classes.covidLink}>Covid 19</Nav.Link>
               <Nav.Link as={Link} to="/about">About us</Nav.Link>
               {/* <Nav.Link as={Link} to="/login">
                 Login
